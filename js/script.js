@@ -1,13 +1,30 @@
+// Form
+
 const form = document.querySelector(".form");
 const inputSearch = document.querySelector(".inputSearch");
-const nome = document.getElementById("nome");
-const img = document.getElementById("img")
-const botao = document.getElementById("botao");
+const btnSearch = document.getElementById("subBtn");
 
+// Dados Pokedex
+
+const pokemonName = document.getElementById("nome");
+const pokeId = document.querySelector(".id");
+const pokemonImg = document.getElementById("img")
+const pokeType = document.querySelector(".type");
+const pokeHeight = document.querySelector(".height");
+const pokeWeight = document.querySelector(".weight");
+
+const pokeHp = document.querySelector(".stats-hp");
+const pokeAtk = document.querySelector(".stats-atk")
+const pokeDef = document.querySelector(".stats-def")
+const pokeSpcAtk = document.querySelector(".stats-spc-atk")
+const pokeSpcDef = document.querySelector(".stats-spc-def")
+const pokeSpd = document.querySelector(".stats-spd")
+
+
+// Funções
 
 const getPokemon = async (pokemon) => {
     const apiURL = await fetch(`https://pokeapi.co/api/v2/pokemon/${pokemon}`);
-
     const data = apiURL.json();
     return data;
 }
@@ -15,14 +32,31 @@ const getPokemon = async (pokemon) => {
 const showPokemon = async (pokemon) => {
     const data = await getPokemon(pokemon);
 
-    nome.innerHTML = data.name;
-    img.src = `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${data.id}.png`
-    inputSearch.value = "";
+    pokemonName.innerHTML = data.name;
+    pokeId.innerHTML = `#${data.id}`;
 
+    pokemonImg.src = `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${data.id}.png`;
+
+    pokeType.innerHTML = data.types[0].type.name;
+
+    pokeHeight.innerHTML = `${data.height / 10} m`.replace(".", ",");
+    pokeWeight.innerHTML = `${data.weight / 10} kg`.replace(".", ",");
+
+    pokeHp.innerHTML = `HP: ${data.stats[0].base_stat}`;
+    pokeAtk.innerHTML = `Attack: ${data.stats[1].base_stat}`;
+    pokeDef.innerHTML = `Defense: ${data.stats[2].base_stat}`;
+    pokeSpcAtk.innerHTML = `Special Attack: ${data.stats[3].base_stat}`;
+    pokeSpcDef.innerHTML = `Special Defense: ${data.stats[4].base_stat}`;
+    pokeSpd.innerHTML = `Speed: ${data.stats[5].base_stat}`;
+
+
+    inputSearch.value = "";
     console.log(data);
 }
 
+// Eventos
+
 form.addEventListener("submit", (e) => {
     e.preventDefault();
-    showPokemon(inputSearch.value)
+    showPokemon(inputSearch.value.toLowerCase());
 })
