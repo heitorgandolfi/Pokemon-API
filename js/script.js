@@ -13,12 +13,12 @@ const pokeType = document.querySelector(".type");
 const pokeHeight = document.querySelector(".height");
 const pokeWeight = document.querySelector(".weight");
 
-const pokeHp = document.querySelector(".stats-hp");
-const pokeAtk = document.querySelector(".stats-atk")
-const pokeDef = document.querySelector(".stats-def")
-const pokeSpcAtk = document.querySelector(".stats-spc-atk")
-const pokeSpcDef = document.querySelector(".stats-spc-def")
-const pokeSpd = document.querySelector(".stats-spd")
+const pokeHp = document.querySelector(".stat-hp");
+const pokeAtk = document.querySelector(".stat-atk")
+const pokeDef = document.querySelector(".stat-def")
+const pokeSpcAtk = document.querySelector(".stat-spc-atk")
+const pokeSpcDef = document.querySelector(".stat-spc-def")
+const pokeSpd = document.querySelector(".stat-spd")
 
 
 // Funções
