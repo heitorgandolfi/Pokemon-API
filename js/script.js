@@ -31,13 +31,14 @@ const getPokemon = async (pokemon) => {
 
 const showPokemon = async (pokemon) => {
     const data = await getPokemon(pokemon);
+    const types = data.types.map(typeInfo => typeInfo.type.name).join("   |   ");
 
     pokemonName.innerHTML = data.name;
     pokeId.innerHTML = `#${data.id}`;
 
     pokemonImg.src = `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${data.id}.png`;
 
-    pokeType.innerHTML = data.types[0].type.name;
+    pokeType.innerHTML = types;
 
     pokeHeight.innerHTML = `${data.height / 10} m`.replace(".", ",");
     pokeWeight.innerHTML = `${data.weight / 10} kg`.replace(".", ",");
