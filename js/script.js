@@ -36,12 +36,12 @@ const showPokemon = async (pokemon) => {
     pokemonName.innerHTML = data.name;
     pokeId.innerHTML = `#${data.id}`;
 
-    pokemonImg.src = `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${data.id}.png`;
+    pokemonImg.src = `https://raw.githubusercontent.com/RafaelSilva2k22/PokemonImages/main/images/${data.id}.png`;
 
     pokeType.innerHTML = types;
 
-    pokeHeight.innerHTML = `${data.height / 10} m`.replace(".", ",");
-    pokeWeight.innerHTML = `${data.weight / 10} kg`.replace(".", ",");
+    pokeHeight.innerHTML = `Altura: ${data.height / 10} m`.replace(".", ",");
+    pokeWeight.innerHTML = `Peso: ${data.weight / 10} kg`.replace(".", ",");
 
     pokeHp.innerHTML = `HP: ${data.stats[0].base_stat}`;
     pokeAtk.innerHTML = `Attack: ${data.stats[1].base_stat}`;
@@ -52,7 +52,7 @@ const showPokemon = async (pokemon) => {
 
 
     inputSearch.value = "";
-    console.log(data);
+    // console.log(data);
 }
 
 // Eventos
