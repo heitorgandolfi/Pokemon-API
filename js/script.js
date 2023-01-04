@@ -40,8 +40,8 @@ const showPokemon = async (pokemon) => {
 
     pokeType.innerHTML = types;
 
-    pokeHeight.innerHTML = `Altura: ${data.height / 10} m`.replace(".", ",");
-    pokeWeight.innerHTML = `Peso: ${data.weight / 10} kg`.replace(".", ",");
+    pokeHeight.innerHTML = `Height: ${data.height / 10} m`.replace(".", ",");
+    pokeWeight.innerHTML = `Weight: ${data.weight / 10} kg`.replace(".", ",");
 
     pokeHp.innerHTML = `HP: ${data.stats[0].base_stat}`;
     pokeAtk.innerHTML = `Attack: ${data.stats[1].base_stat}`;
@@ -49,7 +49,6 @@ const showPokemon = async (pokemon) => {
     pokeSpcAtk.innerHTML = `Special Attack: ${data.stats[3].base_stat}`;
     pokeSpcDef.innerHTML = `Special Defense: ${data.stats[4].base_stat}`;
     pokeSpd.innerHTML = `Speed: ${data.stats[5].base_stat}`;
-
 
     inputSearch.value = "";
     // console.log(data);
