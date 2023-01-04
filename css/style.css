@@ -15,10 +15,14 @@ body {
 }
 
 .img-container {
-    max-width: 230px;
-    max-height: 230px;
+    max-width: 240px;
     margin: 0 auto;
     padding: 8px;
     border-radius: 8px;
-    position: relative;
+}
+
+.img-container img {
+    background-color: rgba(255, 255, 255, 0.123);
+    border-radius: 50%;
+    width: 95%;
 }
