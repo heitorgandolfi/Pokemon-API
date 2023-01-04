@@ -31,7 +31,7 @@ const getPokemon = async (pokemon) => {
 
 const showPokemon = async (pokemon) => {
     const data = await getPokemon(pokemon);
-    const types = data.types.map(typeInfo => typeInfo.type.name).join("   |   ");
+    const types = data.types.map((typeInfo) => typeInfo.type.name).join("   |   ");
 
     pokemonName.innerHTML = data.name;
     pokeId.innerHTML = `#${data.id}`;
