@@ -57,7 +57,11 @@ const getPokemon = async (pokemon) => {
 
 const showPokemon = async (pokemon) => {
     const data = await getPokemon(pokemon);
+
     const types = data.types.map((typeInfo) => typeInfo.type.name).join("   |   ");
+
+    const type = mainTypes.find(type => types.indexOf(type) > - 1);
+    const color = colors[type];
 
     pokemonName.innerHTML = data.name;
     pokeId.innerHTML = `#${data.id.toString().padStart(3, '0')}`;
@@ -65,8 +69,6 @@ const showPokemon = async (pokemon) => {
     pokemonImg.src = `https://raw.githubusercontent.com/RafaelSilva2k22/PokemonImages/main/images/${data.id}.png`;
 
     pokeType.innerHTML = types;
-    const type = mainTypes.find(type => types.indexOf(type) > - 1);
-    const color = colors[type];
     imgContainer.style.backgroundColor = color;
 
     pokeHeight.innerHTML = `Height: ${data.height / 10} m`.replace(".", ",");
