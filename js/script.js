@@ -4,6 +4,8 @@ const form = document.querySelector(".form");
 const inputSearch = document.querySelector(".inputSearch");
 const btnSearch = document.getElementById("subBtn");
 
+// Cores
+
 const colors = {
     fire: '#F08030',
     grass: '#57B924',
@@ -26,10 +28,11 @@ const colors = {
 };
 
 const mainTypes = Object.keys(colors);
+const imgContainer = document.querySelector(".img-container");
 
 // Dados Pokedex
 
-const pokemonName = document.getElementById("nome");
+const pokemonName = document.getElementById("name");
 const pokeId = document.querySelector(".id");
 const pokemonImg = document.getElementById("img")
 const pokeType = document.querySelector(".type");
@@ -64,7 +67,7 @@ const showPokemon = async (pokemon) => {
     pokeType.innerHTML = types;
     const type = mainTypes.find(type => types.indexOf(type) > - 1);
     const color = colors[type];
-    pokemonImg.style.backgroundColor = color;
+    imgContainer.style.backgroundColor = color;
 
     pokeHeight.innerHTML = `Height: ${data.height / 10} m`.replace(".", ",");
     pokeWeight.innerHTML = `Weight: ${data.weight / 10} kg`.replace(".", ",");

@@ -1,4 +1,4 @@
-*{
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -8,4 +8,17 @@
 body {
     text-align: center;
     margin: 24px;
+}
+
+#name {
+    text-transform: capitalize;
+}
+
+.img-container {
+    max-width: 230px;
+    max-height: 230px;
+    margin: 0 auto;
+    padding: 8px;
+    border-radius: 8px;
+    position: relative;
 }
