@@ -28,7 +28,7 @@ const colors = {
 };
 
 const mainTypes = Object.keys(colors);
-const imgContainer = document.querySelector(".img-container");
+const articleColor = document.querySelector("#article");
 
 // Dados Pokedex
 
@@ -69,7 +69,7 @@ const showPokemon = async (pokemon) => {
     pokemonImg.src = `https://raw.githubusercontent.com/RafaelSilva2k22/PokemonImages/main/images/${data.id}.png`;
 
     pokeType.innerHTML = types;
-    imgContainer.style.backgroundColor = color;
+    articleColor.style.backgroundColor = color;
 
     pokeHeight.innerHTML = `Height: ${data.height / 10} m`.replace(".", ",");
     pokeWeight.innerHTML = `Weight: ${data.weight / 10} kg`.replace(".", ",");
