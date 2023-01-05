@@ -58,7 +58,7 @@ const getPokemon = async (pokemon) => {
 const showPokemon = async (pokemon) => {
     const data = await getPokemon(pokemon);
 
-    const types = data.types.map((typeInfo) => typeInfo.type.name).join("   |   ");
+    const types = data.types?.map((typeInfo) => typeInfo.type.name).join("   |   ");
 
     const type = mainTypes.find(type => types.indexOf(type) > - 1);
     const color = colors[type];

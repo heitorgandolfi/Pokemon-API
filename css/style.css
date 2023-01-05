@@ -3,19 +3,17 @@
     padding: 0;
     box-sizing: border-box;
     list-style: none;
-    overflow: hidden;
     font-family: 'Poppins', sans-serif;
 }
 
 body {
     background-image: linear-gradient(120deg, #fdfbfb 0%, #ebedee 100%);
-    height: 100vh;
+    height: 100%;
 }
 
 .form {
     text-align: center;
-    margin-top: 44px;
-    margin-bottom: 40px;
+    margin: 16px 0px;
 }
 
 .form label {
@@ -74,7 +72,6 @@ article {
     margin-top: 40px;
     max-width: 600px;
     width: 95%;
-    padding: 16px;
     margin: 0 auto;
     background-color: rgb(255, 255, 255);
     border-radius: 12px;
@@ -120,9 +117,5 @@ article {
 }
 
 .stats {
-    display: flex;
-    align-items: flex-end;
-    justify-content: center;
-    text-align: center;
     margin-top: 12px;
 }
