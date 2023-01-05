@@ -7,30 +7,36 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./css/style.css">
     <title>Poké API</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500&display=swap" rel="stylesheet">
 </head>
 
 <body>
-    <article>
+
+    <main>
         <form class="form">
             <label for="input">Pick your Pokemon</label>
-            <input type="text" class="inputSearch" id="input" placeholder="Search name or code(1-806)">
-            <button id="subBtn">go</button>
+            <input type="text" class="inputSearch" id="input" placeholder="Search name or code(1-904)">
+            <button id="subBtn">GO</button>
         </form>
 
+        <article class="hide">
 
-        <section>
-            <div>
-                <div class="basic-infos">
-                    <h2 id="name"></h2>
-                    <h5 class="id"></h5>
-                </div>
+            <section class="minor-infos">
                 <div class="img-container">
                     <img src="" alt="Imagem do Pokemon" id="img">
                     <h4 class="type"></h4>
                 </div>
-            </div>
+            </section>
 
-            <div class="major-infos">
+            <section class="major-infos">
+                <div class="name-id">
+                    <h2 id="name"></h2>
+                    <h5 class="id"></h5>
+                </div>
+
                 <h4 class="height"></h4>
                 <h4 class="weight"></h4>
 
@@ -42,9 +48,10 @@
                     <li class="stat-spc-def"></li>
                     <li class="stat-spd"></li>
                 </ul>
-            </div>
-        </section>
-    </article>
+            </section>
+        </article>
+
+    </main>
 
     <script src="./js/script.js"></script>
 </body>
