@@ -86,11 +86,16 @@ article {
     flex-wrap: wrap;
     gap: 4px;
     margin-bottom: 12px;
+    color: rgb(53, 53, 53);
 }
 
 #name {
     text-transform: capitalize;
-    font-size: clamp(14px, 16px, 16px);
+    font-size: clamp(1.375rem, 1.5vw, 1.625rem);
+}
+
+.id {
+    font-size: clamp(0.875rem, 1vw, 1rem);
 }
 
 .img-container {
@@ -123,4 +128,5 @@ article {
 
 .stats {
     margin-top: 12px;
+    color: rgb(53, 53, 53);
 }
