@@ -57,35 +57,40 @@ const getPokemon = async (pokemon) => {
 }
 
 const showPokemon = async (pokemon) => {
-    const data = await getPokemon(pokemon);
+    if (!inputSearch.value) {
+        alert("Para prosseguir, digite o ID ou o nome do Pokemon.")
+    } else {
+        const data = await getPokemon(pokemon);
 
-    const types = data.types?.map((typeInfo) => typeInfo.type.name).join("   |   ");
+        const types = data.types?.map((typeInfo) => typeInfo.type.name).join("   |   ");
 
-    const type = mainTypes.find(type => types.indexOf(type) > - 1);
-    const color = colors[type];
+        const type = mainTypes.find(type => types.indexOf(type) > - 1);
+        const color = colors[type];
 
-    pokemonName.innerHTML = data.name;
-    pokeId.innerHTML = `#${data.id.toString().padStart(3, '0')}`;
 
-    pokemonImg.src = `https://raw.githubusercontent.com/RafaelSilva2k22/PokemonImages/main/images/${data.id}.png`;
+        pokemonName.innerHTML = data.name;
+        pokeId.innerHTML = `#${data.id.toString().padStart(3, '0')}`;
 
-    pokeType.innerHTML = types;
-    articleColor.style.backgroundColor = color;
+        pokemonImg.src = `https://raw.githubusercontent.com/RafaelSilva2k22/PokemonImages/main/images/${data.id}.png`;
 
-    pokeHeight.innerHTML = `Height: ${data.height / 10} m`.replace(".", ",");
-    pokeWeight.innerHTML = `Weight: ${data.weight / 10} kg`.replace(".", ",");
+        pokeType.innerHTML = types;
+        articleColor.style.backgroundColor = color;
 
-    pokeHp.innerHTML = `HP: ${data.stats[0].base_stat}`;
-    pokeAtk.innerHTML = `Attack: ${data.stats[1].base_stat}`;
-    pokeDef.innerHTML = `Defense: ${data.stats[2].base_stat}`;
-    pokeSpcAtk.innerHTML = `Special Attack: ${data.stats[3].base_stat}`;
-    pokeSpcDef.innerHTML = `Special Defense: ${data.stats[4].base_stat}`;
-    pokeSpd.innerHTML = `Speed: ${data.stats[5].base_stat}`;
+        pokeHeight.innerHTML = `Height: ${data.height / 10} m`.replace(".", ",");
+        pokeWeight.innerHTML = `Weight: ${data.weight / 10} kg`.replace(".", ",");
 
-    inputSearch.value = "";
+        pokeHp.innerHTML = `HP: ${data.stats[0].base_stat}`;
+        pokeAtk.innerHTML = `Attack: ${data.stats[1].base_stat}`;
+        pokeDef.innerHTML = `Defense: ${data.stats[2].base_stat}`;
+        pokeSpcAtk.innerHTML = `Special Attack: ${data.stats[3].base_stat}`;
+        pokeSpcDef.innerHTML = `Special Defense: ${data.stats[4].base_stat}`;
+        pokeSpd.innerHTML = `Speed: ${data.stats[5].base_stat}`;
 
-    showArticle.style.display = "flex";
-    // console.log(data);
+        inputSearch.value = "";
+
+        showArticle.style.display = "flex";
+        // console.log(data);
+    }
 }
 
 // Eventos
