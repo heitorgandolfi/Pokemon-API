@@ -83,12 +83,14 @@ article {
     display: flex;
     align-items: center;
     justify-content: space-around;
+    flex-wrap: wrap;
     gap: 4px;
     margin-bottom: 12px;
 }
 
 #name {
     text-transform: capitalize;
+    font-size: clamp(14px, 16px, 16px);
 }
 
 .img-container {
@@ -106,6 +108,7 @@ article {
 .type {
     text-align: center;
     margin: 0 auto;
+    font-size: clamp(0.875rem, 1vw, 1rem);
     background-color: rgba(255, 255, 255, 0.753);
     max-width: 150px;
     width: 95%;
