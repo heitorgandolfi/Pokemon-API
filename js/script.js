@@ -3,6 +3,7 @@
 const form = document.querySelector(".form");
 const inputSearch = document.querySelector(".inputSearch");
 const btnSearch = document.getElementById("subBtn");
+const showArticle = document.querySelector("#article");
 
 // Cores
 
@@ -82,6 +83,8 @@ const showPokemon = async (pokemon) => {
     pokeSpd.innerHTML = `Speed: ${data.stats[5].base_stat}`;
 
     inputSearch.value = "";
+
+    showArticle.style.display = "flex";
     // console.log(data);
 }
 
