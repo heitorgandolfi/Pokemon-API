@@ -139,6 +139,13 @@ article {
 }
 
 .stats {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
     font-size: 14px;
     margin-top: 12px;
+}
+
+.bold {
+    font-weight: bold;
 }

@@ -4,6 +4,7 @@ const form = document.querySelector(".form");
 const inputSearch = document.querySelector(".inputSearch");
 const btnSearch = document.getElementById("subBtn");
 const showArticle = document.querySelector("#article");
+const teste = document.querySelector(".teste");
 
 // Cores
 
@@ -76,20 +77,17 @@ const showPokemon = async (pokemon) => {
         pokeType.innerHTML = types;
         articleColor.style.backgroundColor = color;
 
-        pokeHeight.innerHTML = `Height: ${data.height / 10} m`.replace(".", ",");
-        pokeWeight.innerHTML = `Weight: ${data.weight / 10} kg`.replace(".", ",");
+        pokeHeight.innerHTML = `<span class="bold">Height:</span> ${data.height / 10}m`.replace(".", ",");
+        pokeWeight.innerHTML = `<span class="bold">Weight:</span> ${data.weight / 10}kg`.replace(".", ",");
 
-        pokeHp.innerHTML = `HP: ${data.stats[0].base_stat}`;
-        pokeAtk.innerHTML = `Attack: ${data.stats[1].base_stat}`;
-        pokeDef.innerHTML = `Defense: ${data.stats[2].base_stat}`;
-        pokeSpcAtk.innerHTML = `Special Attack: ${data.stats[3].base_stat}`;
-        pokeSpcDef.innerHTML = `Special Defense: ${data.stats[4].base_stat}`;
-        pokeSpd.innerHTML = `Speed: ${data.stats[5].base_stat}`;
-
+        pokeHp.innerHTML = `<span class="bold">HP:</span> ${data.stats[0].base_stat}`;
+        pokeAtk.innerHTML = `<span class="bold">Attack:</span> ${data.stats[1].base_stat}`;
+        pokeDef.innerHTML = `<span class="bold">Defense:</span> ${data.stats[2].base_stat}`;
+        pokeSpcAtk.innerHTML = `<span class="bold">Special Attack:</span> ${data.stats[3].base_stat}`;
+        pokeSpcDef.innerHTML = `<span class="bold">Special Defense:</span> ${data.stats[4].base_stat}`;
+        pokeSpd.innerHTML = `<span class="bold">Speed:</span> ${data.stats[5].base_stat}`;
         inputSearch.value = "";
-
         showArticle.style.display = "flex";
-        // console.log(data);
     }
 }
 
