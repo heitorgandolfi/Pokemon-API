@@ -45,6 +45,37 @@ const pokeSpcDef = document.querySelector(".stat-spc-def")
 const pokeSpd = document.querySelector(".stat-spd")
 
 // Funções
+
+// const getAllPoke = async () => {
+//     const URL = await fetch(`https://pokeapi.co/api/v2/pokemon/?limit=24&offset=0/`);
+//     const data = URL.json();
+//     return data;
+// }
+
+// const showAllPoke = async (pokemon) => {
+//     const data = await getAllPoke(pokemon);
+
+//     const datas = data.results;
+
+//     console.log(datas)
+
+//     return datas.map((data, i) => {
+//         const container = document.querySelector(".container");
+//         const img = document.createElement("img");
+//         const div = document.createElement("div");
+//         const h4 = document.createElement("h4");
+//         img.src = `https://raw.githubusercontent.com/RafaelSilva2k22/PokemonImages/main/images/${i + 1}.png`
+//         container.appendChild(div);
+//         const card = container.appendChild(div);
+//         div.appendChild(h4);
+//         div.appendChild(img);
+//         h4.innerHTML = `${data.name}`;
+//         card.style.backgroundColor = "#F3EFEF"
+//     })
+// }
+
+// showAllPoke()
+
 const getPokemon = async (pokemon) => {
     const apiURL = await fetch(`https://pokeapi.co/api/v2/pokemon/${pokemon}`);
     if (apiURL.ok) {

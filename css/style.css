@@ -44,12 +44,12 @@ body {
     padding: 8px;
     max-width: 210px;
     width: 90%;
-    background-color: rgb(206, 206, 206);
+    background-color: #cecece;
     border-radius: 8px;
 }
 
 .form input::placeholder {
-    color: rgb(143, 143, 143);
+    color: #8f8f8f;
 }
 
 .form input:focus {
@@ -81,6 +81,30 @@ body {
 
 .form img:active {
     width: 29px;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
+.container div {
+    box-shadow: 10px 14px 20px -18px rgba(0,0,0,0.75);
+    padding: 8px;
+    border-radius: 8px;
+}
+
+.container div h4 {
+    text-align: center;
+    text-transform: capitalize;
+}
+
+.container div img {
+    max-width: 200px;
+    width: 100%;
 }
 
 article {
