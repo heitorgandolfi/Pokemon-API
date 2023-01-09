@@ -47,8 +47,12 @@ const pokeSpd = document.querySelector(".stat-spd")
 // Funções
 const getPokemon = async (pokemon) => {
     const apiURL = await fetch(`https://pokeapi.co/api/v2/pokemon/${pokemon}`);
-    const data = apiURL.json();
-    return data;
+    if (apiURL.ok) {
+        const data = apiURL.json();
+        return data;
+    } else {
+        alert("Pokemon não localizado. Por favor, verifique se digitou corretamente.");
+    }
 }
 
 const showPokemon = async (pokemon) => {
