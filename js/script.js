@@ -44,9 +44,6 @@ const pokeSpcAtk = document.querySelector(".stat-spc-atk")
 const pokeSpcDef = document.querySelector(".stat-spc-def")
 const pokeSpd = document.querySelector(".stat-spd")
 
-
-
-
 // Funções
 const getPokemon = async (pokemon) => {
     const apiURL = await fetch(`https://pokeapi.co/api/v2/pokemon/${pokemon}`);
