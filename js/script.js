@@ -58,7 +58,7 @@ const getPokemon = async (pokemon) => {
 
 const showPokemon = async (pokemon) => {
     if (!inputSearch.value) {
-        showModal.innerHTML = "Para prosseguir, digite o ID ou o nome do Pokemon.";
+        showModal.innerHTML = "Ops... Para prosseguir, digite o ID ou o nome do Pokemon.";
         modalInfo();
     } else {
         const data = await getPokemon(pokemon);
@@ -90,7 +90,7 @@ function modalInfo() {
     showModal.style.display = "block";
     setTimeout(() => {
         showModal.style.display = "none";
-    }, 2000);
+    }, 3000);
 }
 
 // Eventos
