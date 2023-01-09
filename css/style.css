@@ -12,6 +12,23 @@ body {
     color: #1a1919;
 }
 
+.modal-container {
+    display: flex;
+    justify-content: center;
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    max-width: 440px;
+    width: 95%;
+    padding: 32px;
+    margin-top: 140px;
+    border-radius: 8px;
+    background: rgb(236, 65, 65);
+    color: rgb(73, 2, 2);
+}
+
 .form {
     text-align: center;
     margin: 16px 0px;

@@ -28,6 +28,7 @@ const form = document.querySelector(".form");
 const inputSearch = document.querySelector(".inputSearch");
 const btnSearch = document.getElementById("subBtn");
 const showArticle = document.querySelector("#article");
+const showModal = document.querySelector(".modal");
 
 // Dados Pokedex
 const pokemonImg = document.getElementById("img")
@@ -44,6 +45,8 @@ const pokeSpcDef = document.querySelector(".stat-spc-def")
 const pokeSpd = document.querySelector(".stat-spd")
 
 
+
+
 // Funções
 const getPokemon = async (pokemon) => {
     const apiURL = await fetch(`https://pokeapi.co/api/v2/pokemon/${pokemon}`);
@@ -51,13 +54,15 @@ const getPokemon = async (pokemon) => {
         const data = apiURL.json();
         return data;
     } else {
-        alert("Pokemon não localizado. Por favor, verifique se digitou corretamente.");
+        showModal.innerHTML = "Ops... Pokemon não localizado. Verifique se digitou o seu nome ou ID corretamente.";
+        modalInfo();
     }
 }
 
 const showPokemon = async (pokemon) => {
     if (!inputSearch.value) {
-        alert("Para prosseguir, digite o ID ou o nome do Pokemon.")
+        showModal.innerHTML = "Para prosseguir, digite o ID ou o nome do Pokemon.";
+        modalInfo();
     } else {
         const data = await getPokemon(pokemon);
         const types = data.types?.map((typeInfo) => typeInfo.type.name).join("   |   ");
@@ -80,6 +85,14 @@ const showPokemon = async (pokemon) => {
         inputSearch.value = "";
         showArticle.style.display = "flex";
     }
+}
+
+function modalInfo() {
+    showArticle.style.display = "none";
+    showModal.style.display = "block";
+    setTimeout(() => {
+        showModal.style.display = "none";
+    }, 2000);
 }
 
 // Eventos
