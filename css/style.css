@@ -75,7 +75,6 @@ article {
     max-width: 600px;
     width: 95%;
     margin: 0 auto;
-    background-color: rgb(255, 255, 255);
     border-radius: 12px;
     box-shadow: 7px 10px 21px -9px rgba(0, 0, 0, 0.438);
 }
@@ -105,7 +104,7 @@ article {
 }
 
 .img-container img {
-    background-color: rgba(255, 255, 255, 0.123);
+    background-color: rgba(255, 255, 255, 0.192);
     border-radius: 50%;
     width: 95%;
 }
@@ -135,9 +134,11 @@ article {
 
 .height,
 .weight {
+    font-size: 14px;
     font-weight: normal;
 }
 
 .stats {
+    font-size: 14px;
     margin-top: 12px;
 }
