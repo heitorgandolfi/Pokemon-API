@@ -51,7 +51,7 @@ const getPokemon = async (pokemon) => {
         const data = apiURL.json();
         return data;
     } else {
-        showModal.innerHTML = "Ops... Pokemon não localizado. Verifique se digitou o seu nome ou ID corretamente.";
+        showModal.innerHTML = "Ops... Pokemon não localizado. Verifique se digitou o nome ou o ID corretamente.";
         modalInfo();
     }
 }
@@ -79,6 +79,7 @@ const showPokemon = async (pokemon) => {
         pokeSpcAtk.innerHTML = `<span class="bold">Special Attack:</span> ${data.stats[3].base_stat}`;
         pokeSpcDef.innerHTML = `<span class="bold">Special Defense:</span> ${data.stats[4].base_stat}`;
         pokeSpd.innerHTML = `<span class="bold">Speed:</span> ${data.stats[5].base_stat}`;
+
         inputSearch.value = "";
         showArticle.style.display = "flex";
     }
