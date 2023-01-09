@@ -85,7 +85,7 @@ const showPokemon = async (pokemon) => {
     }
 }
 
-function modalInfo() {
+const modalInfo = () => {
     showArticle.style.display = "none";
     showModal.style.display = "block";
     setTimeout(() => {
