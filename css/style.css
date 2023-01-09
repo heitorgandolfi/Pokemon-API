@@ -71,10 +71,10 @@ article {
     align-items: flex-start;
     justify-content: center;
     flex-wrap: wrap;
-    margin-top: 40px;
     max-width: 600px;
     width: 95%;
     margin: 0 auto;
+    margin-bottom: 12px;
     border-radius: 12px;
     box-shadow: 7px 10px 21px -9px rgba(0, 0, 0, 0.438);
 }
