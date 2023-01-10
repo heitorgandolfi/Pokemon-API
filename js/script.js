@@ -104,12 +104,12 @@ const showPokemon = async (pokemon) => {
         articleColor.style.backgroundColor = color;
         pokeHeight.innerHTML = `<span class="bold">Height:</span> ${data.height / 10}m`.replace(".", ",");
         pokeWeight.innerHTML = `<span class="bold">Weight:</span> ${data.weight / 10}kg`.replace(".", ",");
-        pokeHp.innerHTML = `<span class="bold">HP:</span> ${data.stats[0].base_stat}`;
-        pokeAtk.innerHTML = `<span class="bold">Attack:</span> ${data.stats[1].base_stat}`;
-        pokeDef.innerHTML = `<span class="bold">Defense:</span> ${data.stats[2].base_stat}`;
-        pokeSpcAtk.innerHTML = `<span class="bold">Special Attack:</span> ${data.stats[3].base_stat}`;
-        pokeSpcDef.innerHTML = `<span class="bold">Special Defense:</span> ${data.stats[4].base_stat}`;
-        pokeSpd.innerHTML = `<span class="bold">Speed:</span> ${data.stats[5].base_stat}`;
+        pokeHp.innerHTML = `<span class="bold">HP:</span> ${data.stats[0].base_stat} <br /><progress value="${data.stats[0].base_stat}" max="220" />`;
+        pokeAtk.innerHTML = `<span class="bold">Attack:</span> ${data.stats[1].base_stat} <br /><progress value="${data.stats[1].base_stat}" max="220" />`;
+        pokeDef.innerHTML = `<span class="bold">Defense:</span> ${data.stats[2].base_stat} <br /><progress value="${data.stats[2].base_stat}" max="220" />`;
+        pokeSpcAtk.innerHTML = `<span class="bold">Special Attack:</span> ${data.stats[3].base_stat} <br /><progress value="${data.stats[3].base_stat}" max="220" />`;
+        pokeSpcDef.innerHTML = `<span class="bold">Special Defense:</span> ${data.stats[4].base_stat} <br /><progress value="${data.stats[4].base_stat}" max="220" />`;
+        pokeSpd.innerHTML = `<span class="bold">Speed:</span> ${data.stats[5].base_stat} <br /><progress value="${data.stats[5].base_stat}" max="220" />`;
 
         inputSearch.value = "";
         showArticle.style.display = "flex";
