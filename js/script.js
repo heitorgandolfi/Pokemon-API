@@ -127,5 +127,5 @@ const modalInfo = () => {
 // Eventos
 form.addEventListener("submit", (e) => {
     e.preventDefault();
-    showPokemon(inputSearch.value.toLowerCase());
+    showPokemon(inputSearch.value.trim().toLowerCase());
 })
