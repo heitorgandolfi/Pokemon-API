@@ -48,14 +48,14 @@ const pokeSpd = document.querySelector(".stat-spd");
 
 const getPokemon = async (pokemon) => {
   try {
-    const apiURL = await fetch(`https://pokeapi.co/api/v2/pokemon/${pokemon}`);
-    if (!apiURL.ok) {
+    const url = await fetch(`https://pokeapi.co/api/v2/pokemon/${pokemon}`);
+    if (!url.ok) {
       showModal.innerHTML =
         "Ops... Pokemon não localizado. Verifique se digitou o nome ou o ID corretamente.";
       modalInfo();
-      throw new Error("O ID ou nome do Pokemon não foi localizado.");
+      throw new Error("Ocorreu algum erro...");
     } else {
-      const data = apiURL.json();
+      const data = url.json();
       return data;
     }
   } catch (error) {
@@ -64,23 +64,21 @@ const getPokemon = async (pokemon) => {
 };
 
 const showPokemon = async (pokemon) => {
-  if (!inputSearch.value) {
-    showModal.innerHTML =
-      "Ops... Para prosseguir, digite o ID ou o nome do Pokemon.";
-    modalInfo();
-  } else {
+  try {
     const data = await getPokemon(pokemon);
     const types = data.types
       ?.map((typeInfo) => typeInfo.type.name)
       .join("   |   ");
     const type = mainTypes.find((type) => types.indexOf(type) > -1);
     const color = colors[type];
-
     innerData(data, color, types);
+  } catch (error) {
+    console.log(error);
   }
 };
 
 function innerData(data, color, types) {
+
   pokemonName.innerHTML = data.name;
   pokeId.innerHTML = `#${data.id.toString().padStart(3, "0")}`;
   pokemonImg.src = `https://raw.githubusercontent.com/RafaelSilva2k22/PokemonImages/main/images/${data.id}.png`;
@@ -112,5 +110,11 @@ const modalInfo = () => {
 // Eventos
 form.addEventListener("submit", (e) => {
   e.preventDefault();
-  showPokemon(inputSearch.value.trim().toLowerCase());
+  if (inputSearch.value) {
+    showPokemon(inputSearch.value.trim().toLowerCase());
+  } else {
+    showModal.textContent =
+      "Ops... Para prosseguir, digite o ID ou o nome do Pokemon.";
+    modalInfo();
+  }
 });
